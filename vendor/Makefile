@@ -4,7 +4,7 @@ include $(TOP)/configure/CONFIG
 # config options for linux builds
 CONFIGOPTIONS += --prefix=$(shell cd $(TOP)/vendor && pwd)/ffmpeg-$(T_A)
 CONFIGOPTIONS += --enable-shared --enable-static --enable-debug --disable-stripping
-CONFIGOPTIONS += --disable-ffmpeg --disable-ffplay --disable-ffprobe --disable-ffserver
+CONFIGOPTIONS += --disable-ffmpeg --disable-ffplay --disable-ffprobe
 CONFIGOPTIONS += --disable-indevs --disable-outdevs --disable-symver
 
 # Good idea to use these if you have to do any debugging...
