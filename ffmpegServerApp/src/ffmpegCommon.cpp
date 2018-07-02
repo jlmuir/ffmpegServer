@@ -92,6 +92,9 @@ int formatArray(NDArray *pArray, asynUser *pasynUser, AVFrame *inPicture,
     				break;				
 			}			
 			if (stride) {	
+				scPicture->format = c->pix_fmt;
+				scPicture->width = c->width;
+				scPicture->height = c->height;
 	    	    scPicture->data[0] = (uint8_t*) pArray->pData;
     		    scPicture->data[1] = (uint8_t*) neutral;
     		    scPicture->data[2] = (uint8_t*) neutral;    	        	    
@@ -134,6 +137,11 @@ int formatArray(NDArray *pArray, asynUser *pasynUser, AVFrame *inPicture,
     /* scale the picture so we can pass it to the encoder */
     sws_scale(*pCtx, inPicture->data, inPicture->linesize, 0,
 		      height, scPicture->data, scPicture->linesize);
+
+    scPicture->format = c->pix_fmt;
+    scPicture->width = c->width;
+    scPicture->height = c->height;
+
 	return(asynSuccess);
 }
 	
