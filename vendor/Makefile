@@ -27,7 +27,7 @@ endif
 
 # For windows, install the dlls and libs
 BIN_INSTALLS_WIN32  += $(wildcard ../ffmpeg-$(VENDORARCH)-shared/bin/*.dll)
-LIB_INSTALLS_WIN32  += avdevice.lib avformat.lib avcodec.lib avutil.lib swscale.lib
+LIB_INSTALLS_WIN32  += avdevice.lib avformat.lib avcodec.lib swresample.lib swscale.lib avutil.lib
 
 # For linux, install all the .a and .so files
 LIB_INSTALLS_Linux  += $(wildcard ../ffmpeg-$(T_A)/lib/*.so*) $(wildcard ../ffmpeg-$(T_A)/lib/*.a)
