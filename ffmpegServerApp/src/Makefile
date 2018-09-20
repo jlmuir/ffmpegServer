@@ -42,9 +42,9 @@ endif
 USR_INCLUDES += -I$(TOP)/vendor/ffmpeg-$(VENDORARCH)/include
 		
 # build the ffmpeg libs (or stubs on windows) into the binaries
-ffmpegServer_LIBS += avdevice avformat avcodec swresample swscale avutil
-ffmpegServer_LIBS += NDPlugin
-ffmpegServer_SYS_LIBS_WIN32 += user32
+LIB_LIBS += avdevice avformat avcodec swresample swscale avutil
+LIB_LIBS += NDPlugin
+LIB_SYS_LIBS_WIN32 += user32
 		
 # The following are compiled and added to the support library
 ffmpegServer_SRCS += ffmpegCommon.cpp
